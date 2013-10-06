@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Prevent Password Reset
- * Plugin URI: http://justintadlock.com/archives/2012/01/19/prevent-password-reset-wordpress-plugin
+ * Plugin URI: http://themehybrid.com/plugins/prevent-password-reset
  * Description: Prevents password reset for select users via the WordPress "lost password" form. This plugin adds a checkbox to each user's profile in the admin. If selected, it prevents the user's password from being reset.
  * Version: 0.2.0-beta
  * Author: Justin Tadlock
@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License along with this program; if not, write 
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
- * @package PreventPasswordReset
- * @version 0.1.0
- * @author Justin Tadlock <justin@justintadlock.com>
- * @copyright Copyright (c) 2012, Justin Tadlock
- * @link http://justintadlock.com/archives/2012/01/19/prevent-password-reset-wordpress-plugin
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @package   PreventPasswordReset
+ * @version   0.2.0
+ * @author    Justin Tadlock <justin@justintadlock.com>
+ * @copyright Copyright (c) 2012 - 2013, Justin Tadlock
+ * @link      http://themehybrid.com/plugins/prevent-password-reset
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /* Set up the plugin on the 'plugins_loaded' hook. */
