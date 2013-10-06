@@ -28,7 +28,9 @@ add_action( 'plugins_loaded', 'ppr_setup' );
 /**
  * Plugin setup function.  Loads the translation files and adds each action and filter to their appropriate hook.
  *
- * @since 0.1.0
+ * @since  0.1.0
+ * @access public
+ * @return void
  */
 function ppr_setup() {
 
@@ -42,7 +44,7 @@ function ppr_setup() {
 	add_action( 'personal_options', 'ppr_personal_options' );
 
 	/* Save whether the user allows password resetting. */
-	add_action( 'personal_options_update', 'ppr_save_user_meta' );
+	add_action( 'personal_options_update',  'ppr_save_user_meta' );
 	add_action( 'edit_user_profile_update', 'ppr_save_user_meta' );
 
 	/* Custom meta for plugin on the plugins admin screen. */
@@ -53,10 +55,10 @@ function ppr_setup() {
  * Checks whether a user will allow their pasword to be reset via the "lost password" form.  This is 
  * saved as user meta ('_prevent_password_reset').
  *
- * @since 0.1.0
- * @param bool $allow Whether the password can be reset.
- * @param int $user_id The ID of the user.
- * @return bool $allow
+ * @since  0.1.0
+ * @param  bool   $allow    Whether the password can be reset.
+ * @param  int    $user_id  The ID of the user.
+ * @return bool
  */
 function ppr_allow_password_reset( $allow, $user_id ) {
 
@@ -73,8 +75,10 @@ function ppr_allow_password_reset( $allow, $user_id ) {
  * Displays a checkbox in the "Personal Options" section of the user profile page for selecting whether their 
  * password can be reset.
  *
- * @since 0.1.0
- * @param object $user The user object for the user currently being edited.
+ * @since  0.1.0
+ * @access public
+ * @param  object  $user  The user object for the user currently being edited.
+ * @return void
  */
 function ppr_personal_options( $user ) { ?>
 	<tr class="ppr-password-reset">
