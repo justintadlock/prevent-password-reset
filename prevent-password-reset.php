@@ -3,7 +3,7 @@
  * Plugin Name: Prevent Password Reset
  * Plugin URI: http://themehybrid.com/plugins/prevent-password-reset
  * Description: Prevents password reset for select users via the WordPress "lost password" form. This plugin adds a checkbox to each user's profile in the admin. If selected, it prevents the user's password from being reset.
- * Version: 0.2.0-beta
+ * Version: 0.2.0
  * Author: Justin Tadlock
  * Author URI: http://justintadlock.com
  *
