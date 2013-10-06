@@ -44,6 +44,9 @@ function ppr_setup() {
 	/* Save whether the user allows password resetting. */
 	add_action( 'personal_options_update', 'ppr_save_user_meta' );
 	add_action( 'edit_user_profile_update', 'ppr_save_user_meta' );
+
+	/* Custom meta for plugin on the plugins admin screen. */
+	add_filter( 'plugin_row_meta', 'ppr_plugin_row_meta', 10, 2 );
 }
 
 /**
@@ -100,6 +103,26 @@ function ppr_save_user_meta( $user_id ) {
 	$meta_value = isset( $_POST['prevent_password_reset'] ) ? 1 : 0;
 
 	update_user_meta( $user_id, '_prevent_password_reset', $meta_value );
+}
+
+/**
+ * Adds support, rating, and donation links to the plugin row meta on the plugins admin screen.
+ *
+ * @since  0.2.0
+ * @access public
+ * @param  array  $meta
+ * @param  string $file
+ * @return array
+ */
+function ppr_plugin_row_meta( $meta, $file ) {
+
+	if ( preg_match( '/prevent-password-reset\.php/i', $file ) ) {
+		$meta[] = '<a href="http://themehybrid.com/support">' . __( 'Plugin support', 'prevent-password-reset' ) . '</a>';
+		$meta[] = '<a href="http://wordpress.org/support/view/plugin-reviews/prevent-password-reset#postform">' . __( 'Rate plugin', 'prevent-password-reset' ) . '</a>';
+		$meta[] = '<a href="http://themehybrid.com/donate">' . __( 'Donate', 'prevent-password-reset' ) . '</a>';
+	}
+
+	return $meta;
 }
 
 ?>
